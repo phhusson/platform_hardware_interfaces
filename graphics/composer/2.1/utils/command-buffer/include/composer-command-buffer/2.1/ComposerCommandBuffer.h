@@ -402,6 +402,12 @@ class CommandWriterBase {
         endCommand();
     }
 
+    void vendor800_1(uint32_t val) {
+        beginCommand(0x800 << 16, 1);
+        write(val);
+        endCommand();
+    }
+
    protected:
      template <typename T>
      void beginCommand(T command, uint16_t length) {
